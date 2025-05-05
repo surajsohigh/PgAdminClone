@@ -126,7 +126,3 @@ def get_table_columns(request, table_name):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-
-
-# import logging
-# logger = logging.getLogger(__name__)
