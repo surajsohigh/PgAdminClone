@@ -81,30 +81,8 @@ class UserView(APIView):
         except Exception as e:
             return Response({'message': f"Internal server error"}, 
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-      
-    
-    # def get(self, request, pk=None, format=None):
-    #     try:
-    #         if pk:
-    #             userData = MyUser.objects.get(id=pk)
-    #             serializer = UserSerializer(userData)
-    #         else:
-    #             userData = MyUser.objects.all()
-    #             serializer = UserSerializer(userData, many=True)
-        
-    #         return Response({'message': "User Fetched Sucessfully", 
-    #                          'User Data': serializer.data}, status=status.HTTP_200_OK)
-        
-    #     except ObjectDoesNotExist:
-    #         return Response(
-    #             {'message': f"User with id {pk} not found"},
-    #             status=status.HTTP_404_NOT_FOUND
-    #         )
-        
-    #     except Exception as e:
-    #         return Response({'message': f"Internal server error"},
-    #             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
+
 class UserProfile(APIView):
     permission_classes = [permissions.IsAuthenticated]
     renderer_classes = [UserRenderer]
